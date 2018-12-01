@@ -1,0 +1,298 @@
+[0;37mx-----------------------------------------------x
+[0m[0;37m|           [0;34m2018 [1;34madvent of code[0;34m day 1[0;37m           |
+[0m[0;37mx-----------------------------------------------x
+
+[0m[0;37mverbosity set to [0;36m1
+[0m[1;37mstarting...
+
+[0m[0;37m> loop[1;37m	0[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	0[0;37m: [0;32mcompleted in 0.003168 seconds
+[0m[0;37m> loop[1;37m	1[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	1[0;37m: [0;32mcompleted in 0.006122 seconds
+[0m[0;37m> loop[1;37m	2[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	2[0;37m: [0;32mcompleted in 0.008738 seconds
+[0m[0;37m> loop[1;37m	3[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	3[0;37m: [0;32mcompleted in 0.010357 seconds
+[0m[0;37m> loop[1;37m	4[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	4[0;37m: [0;32mcompleted in 0.009606 seconds
+[0m[0;37m> loop[1;37m	5[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	5[0;37m: [0;32mcompleted in 0.008594 seconds
+[0m[0;37m> loop[1;37m	6[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	6[0;37m: [0;32mcompleted in 0.007060 seconds
+[0m[0;37m> loop[1;37m	7[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	7[0;37m: [0;32mcompleted in 0.006450 seconds
+[0m[0;37m> loop[1;37m	8[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	8[0;37m: [0;32mcompleted in 0.006481 seconds
+[0m[0;37m> loop[1;37m	9[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	9[0;37m: [0;32mcompleted in 0.007067 seconds
+[0m[0;37m> loop[1;37m	10[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	10[0;37m: [0;32mcompleted in 0.007791 seconds
+[0m[0;37m> loop[1;37m	11[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	11[0;37m: [0;32mcompleted in 0.008545 seconds
+[0m[0;37m> loop[1;37m	12[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	12[0;37m: [0;32mcompleted in 0.009239 seconds
+[0m[0;37m> loop[1;37m	13[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	13[0;37m: [0;32mcompleted in 0.010312 seconds
+[0m[0;37m> loop[1;37m	14[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	14[0;37m: [0;32mcompleted in 0.011388 seconds
+[0m[0;37m> loop[1;37m	15[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	15[0;37m: [0;32mcompleted in 0.011657 seconds
+[0m[0;37m> loop[1;37m	16[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	16[0;37m: [0;32mcompleted in 0.012585 seconds
+[0m[0;37m> loop[1;37m	17[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	17[0;37m: [0;32mcompleted in 0.013228 seconds
+[0m[0;37m> loop[1;37m	18[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	18[0;37m: [0;32mcompleted in 0.013877 seconds
+[0m[0;37m> loop[1;37m	19[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	19[0;37m: [0;32mcompleted in 0.014874 seconds
+[0m[0;37m> loop[1;37m	20[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	20[0;37m: [0;32mcompleted in 0.015969 seconds
+[0m[0;37m> loop[1;37m	21[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	21[0;37m: [0;32mcompleted in 0.020138 seconds
+[0m[0;37m> loop[1;37m	22[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	22[0;37m: [0;32mcompleted in 0.018618 seconds
+[0m[0;37m> loop[1;37m	23[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	23[0;37m: [0;32mcompleted in 0.018950 seconds
+[0m[0;37m> loop[1;37m	24[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	24[0;37m: [0;32mcompleted in 0.019344 seconds
+[0m[0;37m> loop[1;37m	25[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	25[0;37m: [0;32mcompleted in 0.020090 seconds
+[0m[0;37m> loop[1;37m	26[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	26[0;37m: [0;32mcompleted in 0.020862 seconds
+[0m[0;37m> loop[1;37m	27[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	27[0;37m: [0;32mcompleted in 0.021869 seconds
+[0m[0;37m> loop[1;37m	28[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	28[0;37m: [0;32mcompleted in 0.022688 seconds
+[0m[0;37m> loop[1;37m	29[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	29[0;37m: [0;32mcompleted in 0.023992 seconds
+[0m[0;37m> loop[1;37m	30[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	30[0;37m: [0;32mcompleted in 0.025244 seconds
+[0m[0;37m> loop[1;37m	31[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	31[0;37m: [0;32mcompleted in 0.029634 seconds
+[0m[0;37m> loop[1;37m	32[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	32[0;37m: [0;32mcompleted in 0.027321 seconds
+[0m[0;37m> loop[1;37m	33[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	33[0;37m: [0;32mcompleted in 0.027377 seconds
+[0m[0;37m> loop[1;37m	34[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	34[0;37m: [0;32mcompleted in 0.028552 seconds
+[0m[0;37m> loop[1;37m	35[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	35[0;37m: [0;32mcompleted in 0.040444 seconds
+[0m[0;37m> loop[1;37m	36[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	36[0;37m: [0;32mcompleted in 0.030350 seconds
+[0m[0;37m> loop[1;37m	37[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	37[0;37m: [0;32mcompleted in 0.030598 seconds
+[0m[0;37m> loop[1;37m	38[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	38[0;37m: [0;32mcompleted in 0.031591 seconds
+[0m[0;37m> loop[1;37m	39[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	39[0;37m: [0;32mcompleted in 0.031899 seconds
+[0m[0;37m> loop[1;37m	40[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	40[0;37m: [0;32mcompleted in 0.033330 seconds
+[0m[0;37m> loop[1;37m	41[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	41[0;37m: [0;32mcompleted in 0.033945 seconds
+[0m[0;37m> loop[1;37m	42[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	42[0;37m: [0;32mcompleted in 0.035303 seconds
+[0m[0;37m> loop[1;37m	43[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	43[0;37m: [0;32mcompleted in 0.035901 seconds
+[0m[0;37m> loop[1;37m	44[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	44[0;37m: [0;32mcompleted in 0.038212 seconds
+[0m[0;37m> loop[1;37m	45[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	45[0;37m: [0;32mcompleted in 0.038340 seconds
+[0m[0;37m> loop[1;37m	46[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	46[0;37m: [0;32mcompleted in 0.039057 seconds
+[0m[0;37m> loop[1;37m	47[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	47[0;37m: [0;32mcompleted in 0.040022 seconds
+[0m[0;37m> loop[1;37m	48[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	48[0;37m: [0;32mcompleted in 0.040539 seconds
+[0m[0;37m> loop[1;37m	49[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	49[0;37m: [0;32mcompleted in 0.046090 seconds
+[0m[0;37m> loop[1;37m	50[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	50[0;37m: [0;32mcompleted in 0.042516 seconds
+[0m[0;37m> loop[1;37m	51[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	51[0;37m: [0;32mcompleted in 0.043256 seconds
+[0m[0;37m> loop[1;37m	52[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	52[0;37m: [0;32mcompleted in 0.043586 seconds
+[0m[0;37m> loop[1;37m	53[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	53[0;37m: [0;32mcompleted in 0.050166 seconds
+[0m[0;37m> loop[1;37m	54[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	54[0;37m: [0;32mcompleted in 0.045314 seconds
+[0m[0;37m> loop[1;37m	55[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	55[0;37m: [0;32mcompleted in 0.046138 seconds
+[0m[0;37m> loop[1;37m	56[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	56[0;37m: [0;32mcompleted in 0.046900 seconds
+[0m[0;37m> loop[1;37m	57[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	57[0;37m: [0;32mcompleted in 0.047921 seconds
+[0m[0;37m> loop[1;37m	58[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	58[0;37m: [0;32mcompleted in 0.051487 seconds
+[0m[0;37m> loop[1;37m	59[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	59[0;37m: [0;32mcompleted in 0.053749 seconds
+[0m[0;37m> loop[1;37m	60[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	60[0;37m: [0;32mcompleted in 0.055945 seconds
+[0m[0;37m> loop[1;37m	61[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	61[0;37m: [0;32mcompleted in 0.051691 seconds
+[0m[0;37m> loop[1;37m	62[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	62[0;37m: [0;32mcompleted in 0.052337 seconds
+[0m[0;37m> loop[1;37m	63[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	63[0;37m: [0;32mcompleted in 0.052839 seconds
+[0m[0;37m> loop[1;37m	64[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	64[0;37m: [0;32mcompleted in 0.053986 seconds
+[0m[0;37m> loop[1;37m	65[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	65[0;37m: [0;32mcompleted in 0.055753 seconds
+[0m[0;37m> loop[1;37m	66[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	66[0;37m: [0;32mcompleted in 0.056561 seconds
+[0m[0;37m> loop[1;37m	67[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	67[0;37m: [0;32mcompleted in 0.056572 seconds
+[0m[0;37m> loop[1;37m	68[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	68[0;37m: [0;32mcompleted in 0.056857 seconds
+[0m[0;37m> loop[1;37m	69[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	69[0;37m: [0;32mcompleted in 0.057807 seconds
+[0m[0;37m> loop[1;37m	70[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	70[0;37m: [0;32mcompleted in 0.064823 seconds
+[0m[0;37m> loop[1;37m	71[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	71[0;37m: [0;32mcompleted in 0.063688 seconds
+[0m[0;37m> loop[1;37m	72[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	72[0;37m: [0;32mcompleted in 0.061862 seconds
+[0m[0;37m> loop[1;37m	73[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	73[0;37m: [0;32mcompleted in 0.061241 seconds
+[0m[0;37m> loop[1;37m	74[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	74[0;37m: [0;32mcompleted in 0.061558 seconds
+[0m[0;37m> loop[1;37m	75[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	75[0;37m: [0;32mcompleted in 0.063130 seconds
+[0m[0;37m> loop[1;37m	76[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	76[0;37m: [0;32mcompleted in 0.064463 seconds
+[0m[0;37m> loop[1;37m	77[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	77[0;37m: [0;32mcompleted in 0.064115 seconds
+[0m[0;37m> loop[1;37m	78[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	78[0;37m: [0;32mcompleted in 0.068520 seconds
+[0m[0;37m> loop[1;37m	79[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	79[0;37m: [0;32mcompleted in 0.066712 seconds
+[0m[0;37m> loop[1;37m	80[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	80[0;37m: [0;32mcompleted in 0.066976 seconds
+[0m[0;37m> loop[1;37m	81[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	81[0;37m: [0;32mcompleted in 0.069701 seconds
+[0m[0;37m> loop[1;37m	82[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	82[0;37m: [0;32mcompleted in 0.069812 seconds
+[0m[0;37m> loop[1;37m	83[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	83[0;37m: [0;32mcompleted in 0.075672 seconds
+[0m[0;37m> loop[1;37m	84[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	84[0;37m: [0;32mcompleted in 0.071708 seconds
+[0m[0;37m> loop[1;37m	85[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	85[0;37m: [0;32mcompleted in 0.076693 seconds
+[0m[0;37m> loop[1;37m	86[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	86[0;37m: [0;32mcompleted in 0.080371 seconds
+[0m[0;37m> loop[1;37m	87[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	87[0;37m: [0;32mcompleted in 0.073448 seconds
+[0m[0;37m> loop[1;37m	88[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	88[0;37m: [0;32mcompleted in 0.074165 seconds
+[0m[0;37m> loop[1;37m	89[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	89[0;37m: [0;32mcompleted in 0.074816 seconds
+[0m[0;37m> loop[1;37m	90[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	90[0;37m: [0;32mcompleted in 0.075887 seconds
+[0m[0;37m> loop[1;37m	91[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	91[0;37m: [0;32mcompleted in 0.076029 seconds
+[0m[0;37m> loop[1;37m	92[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	92[0;37m: [0;32mcompleted in 0.081879 seconds
+[0m[0;37m> loop[1;37m	93[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	93[0;37m: [0;32mcompleted in 0.078758 seconds
+[0m[0;37m> loop[1;37m	94[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	94[0;37m: [0;32mcompleted in 0.078681 seconds
+[0m[0;37m> loop[1;37m	95[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	95[0;37m: [0;32mcompleted in 0.079826 seconds
+[0m[0;37m> loop[1;37m	96[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	96[0;37m: [0;32mcompleted in 0.079859 seconds
+[0m[0;37m> loop[1;37m	97[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	97[0;37m: [0;32mcompleted in 0.081030 seconds
+[0m[0;37m> loop[1;37m	98[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	98[0;37m: [0;32mcompleted in 0.082467 seconds
+[0m[0;37m> loop[1;37m	99[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	99[0;37m: [0;32mcompleted in 0.095696 seconds
+[0m[0;37m> loop[1;37m	100[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	100[0;37m: [0;32mcompleted in 0.084850 seconds
+[0m[0;37m> loop[1;37m	101[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	101[0;37m: [0;32mcompleted in 0.085557 seconds
+[0m[0;37m> loop[1;37m	102[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	102[0;37m: [0;32mcompleted in 0.092416 seconds
+[0m[0;37m> loop[1;37m	103[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	103[0;37m: [0;32mcompleted in 0.086131 seconds
+[0m[0;37m> loop[1;37m	104[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	104[0;37m: [0;32mcompleted in 0.092145 seconds
+[0m[0;37m> loop[1;37m	105[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	105[0;37m: [0;32mcompleted in 0.088069 seconds
+[0m[0;37m> loop[1;37m	106[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	106[0;37m: [0;32mcompleted in 0.090697 seconds
+[0m[0;37m> loop[1;37m	107[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	107[0;37m: [0;32mcompleted in 0.089540 seconds
+[0m[0;37m> loop[1;37m	108[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	108[0;37m: [0;32mcompleted in 0.091013 seconds
+[0m[0;37m> loop[1;37m	109[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	109[0;37m: [0;32mcompleted in 0.090884 seconds
+[0m[0;37m> loop[1;37m	110[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	110[0;37m: [0;32mcompleted in 0.104626 seconds
+[0m[0;37m> loop[1;37m	111[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	111[0;37m: [0;32mcompleted in 0.094223 seconds
+[0m[0;37m> loop[1;37m	112[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	112[0;37m: [0;32mcompleted in 0.093447 seconds
+[0m[0;37m> loop[1;37m	113[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	113[0;37m: [0;32mcompleted in 0.094096 seconds
+[0m[0;37m> loop[1;37m	114[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	114[0;37m: [0;32mcompleted in 0.094477 seconds
+[0m[0;37m> loop[1;37m	115[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	115[0;37m: [0;32mcompleted in 0.102239 seconds
+[0m[0;37m> loop[1;37m	116[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	116[0;37m: [0;32mcompleted in 0.096799 seconds
+[0m[0;37m> loop[1;37m	117[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	117[0;37m: [0;32mcompleted in 0.099218 seconds
+[0m[0;37m> loop[1;37m	118[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	118[0;37m: [0;32mcompleted in 0.107209 seconds
+[0m[0;37m> loop[1;37m	119[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	119[0;37m: [0;32mcompleted in 0.099964 seconds
+[0m[0;37m> loop[1;37m	120[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	120[0;37m: [0;32mcompleted in 0.114966 seconds
+[0m[0;37m> loop[1;37m	121[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	121[0;37m: [0;32mcompleted in 0.100535 seconds
+[0m[0;37m> loop[1;37m	122[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	122[0;37m: [0;32mcompleted in 0.101369 seconds
+[0m[0;37m> loop[1;37m	123[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	123[0;37m: [0;32mcompleted in 0.102103 seconds
+[0m[0;37m> loop[1;37m	124[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	124[0;37m: [0;32mcompleted in 0.103652 seconds
+[0m[0;37m> loop[1;37m	125[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	125[0;37m: [0;32mcompleted in 0.111222 seconds
+[0m[0;37m> loop[1;37m	126[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	126[0;37m: [0;32mcompleted in 0.106746 seconds
+[0m[0;37m> loop[1;37m	127[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	127[0;37m: [0;32mcompleted in 0.105637 seconds
+[0m[0;37m> loop[1;37m	128[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	128[0;37m: [0;32mcompleted in 0.106429 seconds
+[0m[0;37m> loop[1;37m	129[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	129[0;37m: [0;32mcompleted in 0.116148 seconds
+[0m[0;37m> loop[1;37m	130[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	130[0;37m: [0;32mcompleted in 0.113781 seconds
+[0m[0;37m> loop[1;37m	131[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	131[0;37m: [0;32mcompleted in 0.108066 seconds
+[0m[0;37m> loop[1;37m	132[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	132[0;37m: [0;32mcompleted in 0.118369 seconds
+[0m[0;37m> loop[1;37m	133[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	133[0;37m: [0;32mcompleted in 0.111123 seconds
+[0m[0;37m> loop[1;37m	134[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	134[0;37m: [0;32mcompleted in 0.119373 seconds
+[0m[0;37m> loop[1;37m	135[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	135[0;37m: [0;32mcompleted in 0.121505 seconds
+[0m[0;37m> loop[1;37m	136[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	136[0;37m: [0;32mcompleted in 0.112541 seconds
+[0m[0;37m> loop[1;37m	137[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	137[0;37m: [0;32mcompleted in 0.114825 seconds
+[0m[0;37m> loop[1;37m	138[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	138[0;37m: [0;32mcompleted in 0.123578 seconds
+[0m[0;37m> loop[1;37m	139[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	139[0;37m: [0;32mcompleted in 0.124434 seconds
+[0m[0;37m> loop[1;37m	140[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	140[0;37m: [0;32mcompleted in 0.116423 seconds
+[0m[0;37m> loop[1;37m	141[0;37m: [0;33mstarted
+[0m[0;37m> loop[1;37m	141[0;37m: [0;32mcompleted in 0.116695 seconds
+[0m[0;37m> loop[1;37m	142[0;37m: [0;33mstarted
+[0m[0;37m>> loop[1;37m	142[0;37m: [0;32mfound duplicate
+[0m[1;37m
+total time taken[0;37m	: [0;31m8.646246[0;37m seconds
+[0m[1;31m[[0;35mpart 1[1;31m] [1;37mloop end freq[0;37m	: [0;36m553
+[0m[1;31m[[0;35mpart 2[1;31m] [1;37mduplicate[0;37m	: [0;36m78724
+[0m

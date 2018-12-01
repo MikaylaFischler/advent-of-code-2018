@@ -1,0 +1,13 @@
+[37mx-----------------------------------------------x
+[0m[37m|           [34m2018 advent of code day 1[37m           |
+[0m[37mx-----------------------------------------------x
+
+[0m[37mverbosity set to [36m0
+[0m[37mstarting...
+
+[0m[37m>> loop	142: [32mfound duplicate
+[0m[37m
+total time taken	: [31m47.165319[37m seconds
+[0m[37m[[35mpart 1[37m] loop end freq	: [36m553
+[0m[37m[[35mpart 2[37m] duplicate	: [36m78724
+[0m

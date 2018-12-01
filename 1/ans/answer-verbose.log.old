@@ -1,0 +1,297 @@
+[37mx-----------------------------------------------x
+[0m[37m|           [34m2018 advent of code day 1[37m           |
+[0m[37mx-----------------------------------------------x
+
+[0m[37mverbosity set to [36m1
+[0m[37mstarting...
+
+[0m[37m> loop	0: [32mcompleted in 0.005478 seconds
+[0m[37m> loop	1: [33mstarted
+[0m[37m> loop	1: [32mcompleted in 0.019248 seconds
+[0m[37m> loop	2: [33mstarted
+[0m[37m> loop	2: [32mcompleted in 0.023304 seconds
+[0m[37m> loop	3: [33mstarted
+[0m[37m> loop	3: [32mcompleted in 0.016669 seconds
+[0m[37m> loop	4: [33mstarted
+[0m[37m> loop	4: [32mcompleted in 0.019196 seconds
+[0m[37m> loop	5: [33mstarted
+[0m[37m> loop	5: [32mcompleted in 0.023702 seconds
+[0m[37m> loop	6: [33mstarted
+[0m[37m> loop	6: [32mcompleted in 0.027834 seconds
+[0m[37m> loop	7: [33mstarted
+[0m[37m> loop	7: [32mcompleted in 0.032357 seconds
+[0m[37m> loop	8: [33mstarted
+[0m[37m> loop	8: [32mcompleted in 0.036468 seconds
+[0m[37m> loop	9: [33mstarted
+[0m[37m> loop	9: [32mcompleted in 0.040828 seconds
+[0m[37m> loop	10: [33mstarted
+[0m[37m> loop	10: [32mcompleted in 0.045419 seconds
+[0m[37m> loop	11: [33mstarted
+[0m[37m> loop	11: [32mcompleted in 0.049348 seconds
+[0m[37m> loop	12: [33mstarted
+[0m[37m> loop	12: [32mcompleted in 0.053482 seconds
+[0m[37m> loop	13: [33mstarted
+[0m[37m> loop	13: [32mcompleted in 0.060948 seconds
+[0m[37m> loop	14: [33mstarted
+[0m[37m> loop	14: [32mcompleted in 0.064926 seconds
+[0m[37m> loop	15: [33mstarted
+[0m[37m> loop	15: [32mcompleted in 0.080488 seconds
+[0m[37m> loop	16: [33mstarted
+[0m[37m> loop	16: [32mcompleted in 0.073619 seconds
+[0m[37m> loop	17: [33mstarted
+[0m[37m> loop	17: [32mcompleted in 0.079561 seconds
+[0m[37m> loop	18: [33mstarted
+[0m[37m> loop	18: [32mcompleted in 0.079238 seconds
+[0m[37m> loop	19: [33mstarted
+[0m[37m> loop	19: [32mcompleted in 0.083542 seconds
+[0m[37m> loop	20: [33mstarted
+[0m[37m> loop	20: [32mcompleted in 0.087741 seconds
+[0m[37m> loop	21: [33mstarted
+[0m[37m> loop	21: [32mcompleted in 0.100248 seconds
+[0m[37m> loop	22: [33mstarted
+[0m[37m> loop	22: [32mcompleted in 0.096399 seconds
+[0m[37m> loop	23: [33mstarted
+[0m[37m> loop	23: [32mcompleted in 0.101145 seconds
+[0m[37m> loop	24: [33mstarted
+[0m[37m> loop	24: [32mcompleted in 0.104947 seconds
+[0m[37m> loop	25: [33mstarted
+[0m[37m> loop	25: [32mcompleted in 0.111329 seconds
+[0m[37m> loop	26: [33mstarted
+[0m[37m> loop	26: [32mcompleted in 0.121004 seconds
+[0m[37m> loop	27: [33mstarted
+[0m[37m> loop	27: [32mcompleted in 0.128345 seconds
+[0m[37m> loop	28: [33mstarted
+[0m[37m> loop	28: [32mcompleted in 0.124085 seconds
+[0m[37m> loop	29: [33mstarted
+[0m[37m> loop	29: [32mcompleted in 0.129462 seconds
+[0m[37m> loop	30: [33mstarted
+[0m[37m> loop	30: [32mcompleted in 0.143317 seconds
+[0m[37m> loop	31: [33mstarted
+[0m[37m> loop	31: [32mcompleted in 0.136567 seconds
+[0m[37m> loop	32: [33mstarted
+[0m[37m> loop	32: [32mcompleted in 0.139612 seconds
+[0m[37m> loop	33: [33mstarted
+[0m[37m> loop	33: [32mcompleted in 0.147166 seconds
+[0m[37m> loop	34: [33mstarted
+[0m[37m> loop	34: [32mcompleted in 0.169871 seconds
+[0m[37m> loop	35: [33mstarted
+[0m[37m> loop	35: [32mcompleted in 0.152447 seconds
+[0m[37m> loop	36: [33mstarted
+[0m[37m> loop	36: [32mcompleted in 0.156854 seconds
+[0m[37m> loop	37: [33mstarted
+[0m[37m> loop	37: [32mcompleted in 0.170890 seconds
+[0m[37m> loop	38: [33mstarted
+[0m[37m> loop	38: [32mcompleted in 0.165425 seconds
+[0m[37m> loop	39: [33mstarted
+[0m[37m> loop	39: [32mcompleted in 0.174023 seconds
+[0m[37m> loop	40: [33mstarted
+[0m[37m> loop	40: [32mcompleted in 0.196190 seconds
+[0m[37m> loop	41: [33mstarted
+[0m[37m> loop	41: [32mcompleted in 0.178254 seconds
+[0m[37m> loop	42: [33mstarted
+[0m[37m> loop	42: [32mcompleted in 0.183364 seconds
+[0m[37m> loop	43: [33mstarted
+[0m[37m> loop	43: [32mcompleted in 0.197203 seconds
+[0m[37m> loop	44: [33mstarted
+[0m[37m> loop	44: [32mcompleted in 0.193377 seconds
+[0m[37m> loop	45: [33mstarted
+[0m[37m> loop	45: [32mcompleted in 0.223214 seconds
+[0m[37m> loop	46: [33mstarted
+[0m[37m> loop	46: [32mcompleted in 0.203376 seconds
+[0m[37m> loop	47: [33mstarted
+[0m[37m> loop	47: [32mcompleted in 0.223020 seconds
+[0m[37m> loop	48: [33mstarted
+[0m[37m> loop	48: [32mcompleted in 0.208871 seconds
+[0m[37m> loop	49: [33mstarted
+[0m[37m> loop	49: [32mcompleted in 0.218612 seconds
+[0m[37m> loop	50: [33mstarted
+[0m[37m> loop	50: [32mcompleted in 0.240066 seconds
+[0m[37m> loop	51: [33mstarted
+[0m[37m> loop	51: [32mcompleted in 0.220663 seconds
+[0m[37m> loop	52: [33mstarted
+[0m[37m> loop	52: [32mcompleted in 0.239266 seconds
+[0m[37m> loop	53: [33mstarted
+[0m[37m> loop	53: [32mcompleted in 0.232214 seconds
+[0m[37m> loop	54: [33mstarted
+[0m[37m> loop	54: [32mcompleted in 0.262126 seconds
+[0m[37m> loop	55: [33mstarted
+[0m[37m> loop	55: [32mcompleted in 0.243689 seconds
+[0m[37m> loop	56: [33mstarted
+[0m[37m> loop	56: [32mcompleted in 0.257332 seconds
+[0m[37m> loop	57: [33mstarted
+[0m[37m> loop	57: [32mcompleted in 0.250569 seconds
+[0m[37m> loop	58: [33mstarted
+[0m[37m> loop	58: [32mcompleted in 0.277683 seconds
+[0m[37m> loop	59: [33mstarted
+[0m[37m> loop	59: [32mcompleted in 0.256318 seconds
+[0m[37m> loop	60: [33mstarted
+[0m[37m> loop	60: [32mcompleted in 0.272426 seconds
+[0m[37m> loop	61: [33mstarted
+[0m[37m> loop	61: [32mcompleted in 0.270203 seconds
+[0m[37m> loop	62: [33mstarted
+[0m[37m> loop	62: [32mcompleted in 0.293949 seconds
+[0m[37m> loop	63: [33mstarted
+[0m[37m> loop	63: [32mcompleted in 0.284981 seconds
+[0m[37m> loop	64: [33mstarted
+[0m[37m> loop	64: [32mcompleted in 0.278774 seconds
+[0m[37m> loop	65: [33mstarted
+[0m[37m> loop	65: [32mcompleted in 0.313358 seconds
+[0m[37m> loop	66: [33mstarted
+[0m[37m> loop	66: [32mcompleted in 0.293112 seconds
+[0m[37m> loop	67: [33mstarted
+[0m[37m> loop	67: [32mcompleted in 0.304888 seconds
+[0m[37m> loop	68: [33mstarted
+[0m[37m> loop	68: [32mcompleted in 0.326184 seconds
+[0m[37m> loop	69: [33mstarted
+[0m[37m> loop	69: [32mcompleted in 0.300652 seconds
+[0m[37m> loop	70: [33mstarted
+[0m[37m> loop	70: [32mcompleted in 0.316872 seconds
+[0m[37m> loop	71: [33mstarted
+[0m[37m> loop	71: [32mcompleted in 0.316653 seconds
+[0m[37m> loop	72: [33mstarted
+[0m[37m> loop	72: [32mcompleted in 0.340001 seconds
+[0m[37m> loop	73: [33mstarted
+[0m[37m> loop	73: [32mcompleted in 0.333040 seconds
+[0m[37m> loop	74: [33mstarted
+[0m[37m> loop	74: [32mcompleted in 0.338049 seconds
+[0m[37m> loop	75: [33mstarted
+[0m[37m> loop	75: [32mcompleted in 0.343518 seconds
+[0m[37m> loop	76: [33mstarted
+[0m[37m> loop	76: [32mcompleted in 0.343341 seconds
+[0m[37m> loop	77: [33mstarted
+[0m[37m> loop	77: [32mcompleted in 0.366350 seconds
+[0m[37m> loop	78: [33mstarted
+[0m[37m> loop	78: [32mcompleted in 0.341252 seconds
+[0m[37m> loop	79: [33mstarted
+[0m[37m> loop	79: [32mcompleted in 0.357068 seconds
+[0m[37m> loop	80: [33mstarted
+[0m[37m> loop	80: [32mcompleted in 0.382206 seconds
+[0m[37m> loop	81: [33mstarted
+[0m[37m> loop	81: [32mcompleted in 0.366873 seconds
+[0m[37m> loop	82: [33mstarted
+[0m[37m> loop	82: [32mcompleted in 0.364857 seconds
+[0m[37m> loop	83: [33mstarted
+[0m[37m> loop	83: [32mcompleted in 0.395083 seconds
+[0m[37m> loop	84: [33mstarted
+[0m[37m> loop	84: [32mcompleted in 0.381748 seconds
+[0m[37m> loop	85: [33mstarted
+[0m[37m> loop	85: [32mcompleted in 0.405518 seconds
+[0m[37m> loop	86: [33mstarted
+[0m[37m> loop	86: [32mcompleted in 0.383378 seconds
+[0m[37m> loop	87: [33mstarted
+[0m[37m> loop	87: [32mcompleted in 0.396298 seconds
+[0m[37m> loop	88: [33mstarted
+[0m[37m> loop	88: [32mcompleted in 0.420315 seconds
+[0m[37m> loop	89: [33mstarted
+[0m[37m> loop	89: [32mcompleted in 0.404342 seconds
+[0m[37m> loop	90: [33mstarted
+[0m[37m> loop	90: [32mcompleted in 0.428302 seconds
+[0m[37m> loop	91: [33mstarted
+[0m[37m> loop	91: [32mcompleted in 0.403192 seconds
+[0m[37m> loop	92: [33mstarted
+[0m[37m> loop	92: [32mcompleted in 0.423149 seconds
+[0m[37m> loop	93: [33mstarted
+[0m[37m> loop	93: [32mcompleted in 0.441289 seconds
+[0m[37m> loop	94: [33mstarted
+[0m[37m> loop	94: [32mcompleted in 0.430254 seconds
+[0m[37m> loop	95: [33mstarted
+[0m[37m> loop	95: [32mcompleted in 0.455743 seconds
+[0m[37m> loop	96: [33mstarted
+[0m[37m> loop	96: [32mcompleted in 0.441915 seconds
+[0m[37m> loop	97: [33mstarted
+[0m[37m> loop	97: [32mcompleted in 0.465857 seconds
+[0m[37m> loop	98: [33mstarted
+[0m[37m> loop	98: [32mcompleted in 0.452227 seconds
+[0m[37m> loop	99: [33mstarted
+[0m[37m> loop	99: [32mcompleted in 0.474717 seconds
+[0m[37m> loop	100: [33mstarted
+[0m[37m> loop	100: [32mcompleted in 0.461882 seconds
+[0m[37m> loop	101: [33mstarted
+[0m[37m> loop	101: [32mcompleted in 0.464516 seconds
+[0m[37m> loop	102: [33mstarted
+[0m[37m> loop	102: [32mcompleted in 0.479708 seconds
+[0m[37m> loop	103: [33mstarted
+[0m[37m> loop	103: [32mcompleted in 0.481761 seconds
+[0m[37m> loop	104: [33mstarted
+[0m[37m> loop	104: [32mcompleted in 0.502724 seconds
+[0m[37m> loop	105: [33mstarted
+[0m[37m> loop	105: [32mcompleted in 0.491594 seconds
+[0m[37m> loop	106: [33mstarted
+[0m[37m> loop	106: [32mcompleted in 0.508004 seconds
+[0m[37m> loop	107: [33mstarted
+[0m[37m> loop	107: [32mcompleted in 0.502934 seconds
+[0m[37m> loop	108: [33mstarted
+[0m[37m> loop	108: [32mcompleted in 0.525994 seconds
+[0m[37m> loop	109: [33mstarted
+[0m[37m> loop	109: [32mcompleted in 0.929303 seconds
+[0m[37m> loop	110: [33mstarted
+[0m[37m> loop	110: [32mcompleted in 0.519406 seconds
+[0m[37m> loop	111: [33mstarted
+[0m[37m> loop	111: [32mcompleted in 0.534199 seconds
+[0m[37m> loop	112: [33mstarted
+[0m[37m> loop	112: [32mcompleted in 0.551567 seconds
+[0m[37m> loop	113: [33mstarted
+[0m[37m> loop	113: [32mcompleted in 0.540239 seconds
+[0m[37m> loop	114: [33mstarted
+[0m[37m> loop	114: [32mcompleted in 0.558375 seconds
+[0m[37m> loop	115: [33mstarted
+[0m[37m> loop	115: [32mcompleted in 0.539993 seconds
+[0m[37m> loop	116: [33mstarted
+[0m[37m> loop	116: [32mcompleted in 0.567762 seconds
+[0m[37m> loop	117: [33mstarted
+[0m[37m> loop	117: [32mcompleted in 0.556409 seconds
+[0m[37m> loop	118: [33mstarted
+[0m[37m> loop	118: [32mcompleted in 0.577618 seconds
+[0m[37m> loop	119: [33mstarted
+[0m[37m> loop	119: [32mcompleted in 0.570641 seconds
+[0m[37m> loop	120: [33mstarted
+[0m[37m> loop	120: [32mcompleted in 0.600434 seconds
+[0m[37m> loop	121: [33mstarted
+[0m[37m> loop	121: [32mcompleted in 0.596180 seconds
+[0m[37m> loop	122: [33mstarted
+[0m[37m> loop	122: [32mcompleted in 0.587783 seconds
+[0m[37m> loop	123: [33mstarted
+[0m[37m> loop	123: [32mcompleted in 0.608077 seconds
+[0m[37m> loop	124: [33mstarted
+[0m[37m> loop	124: [32mcompleted in 0.598650 seconds
+[0m[37m> loop	125: [33mstarted
+[0m[37m> loop	125: [32mcompleted in 0.633672 seconds
+[0m[37m> loop	126: [33mstarted
+[0m[37m> loop	126: [32mcompleted in 0.623908 seconds
+[0m[37m> loop	127: [33mstarted
+[0m[37m> loop	127: [32mcompleted in 0.610395 seconds
+[0m[37m> loop	128: [33mstarted
+[0m[37m> loop	128: [32mcompleted in 0.635288 seconds
+[0m[37m> loop	129: [33mstarted
+[0m[37m> loop	129: [32mcompleted in 0.670646 seconds
+[0m[37m> loop	130: [33mstarted
+[0m[37m> loop	130: [32mcompleted in 0.637503 seconds
+[0m[37m> loop	131: [33mstarted
+[0m[37m> loop	131: [32mcompleted in 0.652801 seconds
+[0m[37m> loop	132: [33mstarted
+[0m[37m> loop	132: [32mcompleted in 0.677863 seconds
+[0m[37m> loop	133: [33mstarted
+[0m[37m> loop	133: [32mcompleted in 0.657732 seconds
+[0m[37m> loop	134: [33mstarted
+[0m[37m> loop	134: [32mcompleted in 0.674576 seconds
+[0m[37m> loop	135: [33mstarted
+[0m[37m> loop	135: [32mcompleted in 0.694740 seconds
+[0m[37m> loop	136: [33mstarted
+[0m[37m> loop	136: [32mcompleted in 0.671024 seconds
+[0m[37m> loop	137: [33mstarted
+[0m[37m> loop	137: [32mcompleted in 0.697270 seconds
+[0m[37m> loop	138: [33mstarted
+[0m[37m> loop	138: [32mcompleted in 0.719150 seconds
+[0m[37m> loop	139: [33mstarted
+[0m[37m> loop	139: [32mcompleted in 0.695476 seconds
+[0m[37m> loop	140: [33mstarted
+[0m[37m> loop	140: [32mcompleted in 0.733054 seconds
+[0m[37m> loop	141: [33mstarted
+[0m[37m> loop	141: [32mcompleted in 0.719437 seconds
+[0m[37m> loop	142: [33mstarted
+[0m[37m>> loop	142: [32mfound duplicate
+[0m[37m
+total time taken	: [31m48.094210[37m seconds
+[0m[37m[[35mpart 1[37m] loop end freq	: [36m553
+[0m[37m[[35mpart 2[37m] duplicate	: [36m78724
+[0m
