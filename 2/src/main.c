@@ -153,7 +153,7 @@ int main(int argc, char** argv) {
 
 	answer_a[26] = '\0';
 	answer_b[26] = '\0';
-	
+
 	char* p2_solution = get_common_chars(answer_a, answer_b);
 
     // print results
