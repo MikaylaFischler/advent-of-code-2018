@@ -243,11 +243,10 @@ int main(int argc, char** argv) {
 				guard_state = FALL_ASLEEP;
 			} else if (e->type == WAKE_UP) {
 				guard_state = WAKE_UP;
+				for (int i = start_min; i < e->minute; i++) {
+					guard->minute_asleep[i]++;
+				}
 				guard->minutes_slept += (e->minute - start_min);
-			}
-
-			if (guard_state && FALL_ASLEEP) {
-				guard->minute_asleep[e->minute]++;
 			}
 		}
 
@@ -258,17 +257,35 @@ int main(int argc, char** argv) {
 	printf(GREEN "%d (%d)\n" RESET, sleepy->id, sleepy->minutes_slept);
 
 	uint16_t max = 0;
-	uint8_t max_hour = 0;
+	uint8_t max_minute = 0;
 	for (int i = 0; i < 60; i++) {
 		if (sleepy->minute_asleep[i] >= max) {
 			max = sleepy->minute_asleep[i];
-			max_hour = i;
-			// printf(GREEN "%d,%d\n" RESET, max, max_hour);
+			max_minute = i;
+			printf(GREEN "%d,%d\n" RESET, max, max_minute);
 		}
-		printf(GREEN "%d,%d\n" RESET, sleepy->minute_asleep[i], i);
 	}
 
-	printf(GREEN "%d,%d\n" RESET, max, max_hour);
+	printf(GREEN "%d,%d\n" RESET, max, max_minute);
+
+	uint32_t _max = 0;
+	uint8_t _max_minute = 0;
+	guard_t* guard_max_thing = NULL;
+	guard_t* g = guards->next;
+	while (g) {
+		for (int i = 0; i < 60; i++) {
+			if (g->minute_asleep[i] >= _max) {
+				_max = g->minute_asleep[i];
+				_max_minute = i;
+				guard_max_thing = g;
+				printf(YELLOW "%d,%d\n" RESET, _max, _max_minute);
+			}
+		}
+
+		g = g->next;
+	}
+
+	printf("%d for minute %d\n", guard_max_thing->id, _max_minute);
 
 
 
