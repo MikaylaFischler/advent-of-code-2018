@@ -104,74 +104,72 @@ int main(int argc, char** argv) {
 
 	claim_fabric_total_start = time_start = clock();
 
-	while (num_read != -1) {
-        if ((num_read = getline(&line, &len, fp)) != -1) {
-			state = 0;
-			if (verbose) { claim_start = clock(); }
-			for (int i = 0; i < len; i++) {
-				switch (state) {
-					case 0:
-						if (line[i] == '#') { state++; }
-						break;
-					case 1:
-						if (line[i] == ' ') {
-							state++;
-							claim_str[x] = '\0';
-							x = 0;
-						} else { claim_str[x++] = line[i]; }
-						break;
-					case 2:
-						if (line[i] == ' ') { state++; }
-						break;
-					case 3:
-						if (line[i] == ',') {
-							state++;
-							left_str[x] = '\0';
-							x = 0;
-						} else { left_str[x++] = line[i]; }
-						break;
-					case 4:
-						if (line[i] == ':') {
-							state++;
-							top_str[x] = '\0';
-							x = 0;
-						} else { top_str[x++] = line[i]; }
-						break;
-					case 5:
-						if (line[i] == ' ') { state++; }
-						break;
-					case 6:
-						if (line[i] == 'x') {
-							state++;
-							width_str[x] = '\0';
-							x = 0;
-						} else { width_str[x++] = line[i]; }
-						break;
-					case 7:
-						if (line[i] == '\n') {
-							state++;
-							height_str[x] = '\0';
-							x = 0;
-						} else { height_str[x++] = line[i]; }
-						break;
-				}
+	while ((num_read = getline(&line, &len, fp)) != -1) {
+		state = 0;
+		if (verbose) { claim_start = clock(); }
+		for (int i = 0; i < len; i++) {
+			switch (state) {
+				case 0:
+					if (line[i] == '#') { state++; }
+					break;
+				case 1:
+					if (line[i] == ' ') {
+						state++;
+						claim_str[x] = '\0';
+						x = 0;
+					} else { claim_str[x++] = line[i]; }
+					break;
+				case 2:
+					if (line[i] == ' ') { state++; }
+					break;
+				case 3:
+					if (line[i] == ',') {
+						state++;
+						left_str[x] = '\0';
+						x = 0;
+					} else { left_str[x++] = line[i]; }
+					break;
+				case 4:
+					if (line[i] == ':') {
+						state++;
+						top_str[x] = '\0';
+						x = 0;
+					} else { top_str[x++] = line[i]; }
+					break;
+				case 5:
+					if (line[i] == ' ') { state++; }
+					break;
+				case 6:
+					if (line[i] == 'x') {
+						state++;
+						width_str[x] = '\0';
+						x = 0;
+					} else { width_str[x++] = line[i]; }
+					break;
+				case 7:
+					if (line[i] == '\n') {
+						state++;
+						height_str[x] = '\0';
+						x = 0;
+					} else { height_str[x++] = line[i]; }
+					break;
 			}
+		}
 
-			if (state == 8) {
-				entry_t* e = &entries[entry_idx++];
-				e->claim = atoi(claim_str);
-				e->left = atoi(left_str);
-				e->top = atoi(top_str);
-				e->width = atoi(width_str);
-				e->height = atoi(height_str);
+		if (state == 8) {
+			entry_t* e = &entries[entry_idx++];
+			e->claim = atoi(claim_str);
+			e->left = atoi(left_str);
+			e->top = atoi(top_str);
+			e->width = atoi(width_str);
+			e->height = atoi(height_str);
 
-				claim_fabric(fabric, *e);
+			claim_fabric(fabric, *e);
 
-				if (verbose) {
-					claim_end = clock();
-					printf(B_YELLOW ">" WHITE " claimed fabric for entry " B_WHITE "%d" WHITE " (%d,%d) with width %d and height %d (" BLUE "%ld us" WHITE ")\n",
-						e->claim, e->left, e->top, e->width, e->height, (claim_end - claim_start) * 1000000 / CLOCKS_PER_SEC);
-				}
+			if (verbose) {
+				claim_end = clock();
+				printf(B_YELLOW ">" WHITE " claimed fabric for entry " B_WHITE "%d" WHITE " (%d,%d) with width %d and height %d (" BLUE "%ld us" WHITE ")\n",
+					e->claim, e->left, e->top, e->width, e->height, (claim_end - claim_start) * 1000000 / CLOCKS_PER_SEC);
 			}
 		}
 	}
