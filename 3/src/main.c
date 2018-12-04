@@ -207,5 +207,9 @@ int main(int argc, char** argv) {
 	for (int x = 0; x < FABRIC_SIZE; x++) { free(fabric[x]); }
 	free(fabric);
 
+	// free other memory
+	fclose(fp);
+	if (line) { free(line); }
+
 	return 0;
 }

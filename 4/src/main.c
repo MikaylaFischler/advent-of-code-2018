@@ -351,7 +351,7 @@ int main(int argc, char** argv) {
 		p2_end = clock();
 		printf(B_MAGENTA ">" B_WHITE " determined which guard has most time asleep in a any minute " WHITE "(" BLUE "%ld us" WHITE ")\n" RESET, (p2_end - p2_start) * 1000000 / CLOCKS_PER_SEC);
 	}
-	
+
 	time_end = clock();
 
     printf(GREEN "done.\n" RESET);
@@ -361,6 +361,8 @@ int main(int argc, char** argv) {
     printf(B_RED "[" MAGENTA "part 2" B_RED "] " B_WHITE "guard who is most often asleep in a minute" WHITE "\t\t: " CYAN "Guard #%d in minute %d\n" RESET, guard_most_asleep_at_time->id, _max_minute);
 
 	// free up memory
+	fclose(fp);
+	if (line) { free(line); }
 	recursive_free_events(start);
 	recursive_free_guards(guards);
 

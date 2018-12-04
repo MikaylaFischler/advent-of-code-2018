@@ -162,6 +162,7 @@ int main(int argc, char** argv) {
     printf(B_RED "[" MAGENTA "part 2" B_RED "] " B_WHITE "differing strings" WHITE "\t: " CYAN "%s and %s\n" RESET, answer_a, answer_b);
     printf(B_RED "[" MAGENTA "part 2" B_RED "] " B_WHITE "common characters" WHITE "\t: " CYAN "%s\n" RESET, p2_solution);
 
+	fclose(fp);
 	if (line) { free(line); }
 	free(seen_count);
     free(p2_solution);
