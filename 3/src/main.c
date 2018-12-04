@@ -13,6 +13,11 @@ typedef struct entry {
 	uint16_t top, left, width, height;
 } entry_t;
 
+/**
+ * @brief mark a region of fabric as claimed
+ * @param fabric the fabric array
+ * @param e the entry to use to claim
+ */
 void claim_fabric(uint8_t** fabric, const entry_t e) {
 	for (int x = e.left; x < (e.left + e.width); x++) {
 		for (int y = e.top; y < (e.top + e.height); y++) {
@@ -21,6 +26,12 @@ void claim_fabric(uint8_t** fabric, const entry_t e) {
 	}
 }
 
+/**
+ * @brief check if the provided entry overlaps with any parts of the fabric
+ * @param fabric the fabric array
+ * @param e the entry to check
+ * @return 1 if overlaps, 0 otherwise
+ */
 uint8_t overlaps(uint8_t** fabric, const entry_t e) {
 	for (int x = e.left; x < (e.left + e.width); x++) {
 		for (int y = e.top; y < (e.top + e.height); y++) {
@@ -30,6 +41,11 @@ uint8_t overlaps(uint8_t** fabric, const entry_t e) {
 	return 0;
 }
 
+/**
+ * @brief count how many inches have been claimed by more than 1 claim
+ * @param fabric the fabric array
+ * @return count of inches claimed more than once
+ */
 uint32_t count_multi_claimed(uint8_t** fabric) {
 	uint32_t count = 0;
 	for (int x = 0; x < FABRIC_SIZE; x++) {
