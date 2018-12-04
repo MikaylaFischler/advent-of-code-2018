@@ -6,4 +6,3 @@ sol : ./bin/main.o
 
 clean :
 	rm sol ./bin/*.o
-
