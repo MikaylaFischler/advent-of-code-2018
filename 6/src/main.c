@@ -93,7 +93,7 @@ uint8_t is_coord(location_t** locations, uint16_t x, uint16_t y) {
 	return 0;
 }
 
-uint32_t distance_to(location_t* loc, uint16_t x, uint16_t y) {
+uint16_t distance_to(location_t* loc, uint16_t x, uint16_t y) {
 	uint16_t dist_x, dist_y;
 	if (loc->x > x) {
 		dist_x = loc->x - x;
@@ -127,7 +127,9 @@ void compute_area(location_t** locations, uint16_t* dists) {
 	}
 
 	if (num_at_mins == 1 && dists[min_idx] != 0) {
+		// printf(RED "%lx: %d\n" RESET, (size_t) &locations[min_idx]->area, locations[min_idx]->area);
 		locations[min_idx]->area++;
+		// printf(BLUE "%lx: %d\n" RESET, (size_t) &locations[min_idx]->area, locations[min_idx]->area);
 	}
 }
 
@@ -143,7 +145,7 @@ int main(int argc, char** argv) {
 	int num_read = 0;
 
 	// open file
-    fp = fopen("./input.txt", "r");
+    fp = fopen("./input.txt.real", "r");
     if (fp == NULL) { return -1; }
 
 	// timing
@@ -200,8 +202,8 @@ int main(int argc, char** argv) {
 		printf("%d, %d\n", loc->x, loc->y);
 	}
 
-	uint16_t map_width = (1000 + unique_rc->max_x - unique_rc->min_x);
-	uint16_t map_height = (1000 + unique_rc->max_y - unique_rc->min_y);
+	uint16_t map_width = (2000 + 1);
+	uint16_t map_height = (2000 + 1);
 	uint16_t*** map = malloc(sizeof(uint16_t**) * map_width);
 
 	for (int i = 0; i < map_width; i++) {
@@ -214,27 +216,30 @@ int main(int argc, char** argv) {
 	for (int i = 0; i < map_width; i++) {
 		for (int j = 0; j < map_height; j++) {
 			for (int k = 0; k < INPUT_LENGTH; k++) {
-				map[i][j][k] = distance_to(locations[k], i , j );
+				if (i == unique_rc->max_x || i == unique_rc->min_x || j == unique_rc->max_y && j == unique_rc->min_y) {
+					map[i][j][k] = -1;
+
+				} else {
+				map[i][j][k] = distance_to(locations[k], i, j);
+				}
+				// printf("%lx: %d\n", (size_t) &map[i][j][k], map[i][j][k]);
 			}
 		}
 	}
 
 	for (int i = 0; i < map_width; i++) {
 		for (int j = 0; j < map_height; j++) {
-			compute_area(locations, map[i][j]);
+			if (i < unique_rc->max_x && i > unique_rc->min_x && j < unique_rc->max_y && j > unique_rc->min_y) {
+				compute_area(locations, map[i][j]);
+			}
 		}
 	}
 
 	uint32_t max_area = 0;
 	for (int i = 0; i < INPUT_LENGTH; i++) {
-		if (!has_inf_area(unique_rc, locations[i])) {
-			printf("area: %d\n", locations[i]->area);
-			if (locations[i]->area > max_area) {
-				max_area = locations[i]->area;
-			}
-		} else {
-
-				printf("area: %d\n", locations[i]->area);
+		printf("area: %d\n", locations[i]->area);
+		if (locations[i]->area > max_area) {
+			max_area = locations[i]->area;
 		}
 	}
 
