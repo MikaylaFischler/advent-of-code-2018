@@ -18,6 +18,42 @@ typedef struct queued_step {
 	struct queued_step* next;
 } queued_step_t;
 
+/**
+ * @brief determine order of steps (part 1 solution)
+ * @param steps the array of steps (length 26)
+ * @param output a string with space for 26 characters and a null terminator
+ */
+void part_1(step_t* steps, char* output) {
+	uint8_t completed = 0;
+	uint8_t to_remove = 0;
+	uint8_t out_idx = 0;
+
+	while (completed != 26) {
+		for (int i = 0; i < 26; i++) {
+			if (steps[i].num_depends == 0) {
+				steps[i].num_depends = -1;
+				to_remove = i;
+				completed++;
+				output[out_idx++] = i + 0x41;
+				break;
+			}
+		}
+
+		for (int j = 0; j < 26; j++) {
+			if (steps[j].depends[to_remove]) {
+				steps[j].depends[to_remove] = 0;
+				steps[j].num_depends--;
+			}
+		}
+	}
+
+	output[out_idx] = '\0';
+}
+
+/**
+ * @brief initialize queue entries to proper initial values
+ * @param queue the queue to initialize
+ */
 void init_queue(queued_step_t* queue) {
 	for (int i = 0; i < 5; i++) {
 		queue[i].done = 1;
@@ -26,10 +62,15 @@ void init_queue(queued_step_t* queue) {
 	}
 }
 
+/**
+ * @brief enqueue a task
+ * @param queue the queue to add to
+ * @param time the time the task will take
+ * @param to_remove the task to remove when complete
+ */
 void enqueue(queued_step_t* queue, uint8_t time, uint8_t to_remove) {
 	for (int i = 0; i < 5; i++) {
 		if (queue[i].done) {
-			printf("enqueued\n");
 			queue[i].done = 0;
 			queue[i].timer = time;
 			queue[i].to_remove = to_remove;
@@ -38,6 +79,11 @@ void enqueue(queued_step_t* queue, uint8_t time, uint8_t to_remove) {
 	}
 }
 
+/**
+ * @brief dequeue an element (mark it as done and give it a negative time value)
+ * @param queue the queue to dequeue from
+ * @param i the element in the queue to dequeue
+ */
 void dequeue(queued_step_t* queue, uint8_t i) {
 	queue[i].done = 1;
 	queue[i].timer = -1;
@@ -57,18 +103,18 @@ int main(int argc, char** argv) {
 	// open file
     fp = fopen("./input.txt", "r");
     if (fp == NULL) { return -1; }
-	uint8_t idx = 0;
 
 	// timing
 	clock_t time_start, time_end;
 
-	// string temp vars
+	// char input temp vars
 	char dependency_in = 0x0;
 	char step_in = 0x0;
-
 	uint8_t state = 0;
 
-	step_t* steps = calloc(sizeof(step_t), 26);
+	// step arrays
+	step_t* steps_p1 = calloc(sizeof(step_t), 26);
+	step_t* steps_p2 = calloc(sizeof(step_t), 26);
 
 	printf(YELLOW "starting...\n" RESET);
 
@@ -90,73 +136,48 @@ int main(int argc, char** argv) {
 			}
 		}
 
-		steps[step_in - 0x41].depends[dependency_in - 0x41] = 1;
-		steps[step_in - 0x41].num_depends++;
+		steps_p1[step_in - 0x41].depends[dependency_in - 0x41] = 1;
+		steps_p1[step_in - 0x41].num_depends++;
+		steps_p2[step_in - 0x41].depends[dependency_in - 0x41] = 1;
+		steps_p2[step_in - 0x41].num_depends++;
 	}
 
-	uint8_t completed = 0;
-	uint8_t to_remove = 0;
-	uint8_t available = 5;
-	uint16_t t = 0;
-
 	// PART 1
-	// while (completed != 26) {
-	// 	for (int i = 0; i < 26; i++) {
-	// 		if (steps[i].num_depends == 0) {
-	// 			steps[i].num_depends = -1;
-	// 			to_remove = i;
-	// 			printf("%c", i + 0x41);
-	// 			completed++;
-	// 			break;
-	// 		}
-	// 	}
-	//
-	// 	for (int j = 0; j < 26; j++) {
-	// 		if (steps[j].depends[to_remove]) {
-	// 			steps[j].depends[to_remove] = 0;
-	// 			steps[j].num_depends--;
-	// 		}
-	// 	}
-	// }
+	char p1_str[27];
+	part_1(steps_p1, p1_str);
 
 	// PART 2
 	queued_step_t* queue = malloc(sizeof(queued_step_t) * 5);
 	init_queue(queue);
+	uint16_t time_to_build = 0;
+	uint8_t completed = 0;
+	uint8_t available = 5;
+
 	while (completed != 26) {
 		for (int i = 0; i < 26; i++) {
-			if (steps[i].num_depends == 0 && available > 0) {
-				steps[i].num_depends = -1;
-				printf("%c ", i + 0x41);
-
-				enqueue(queue, 61 + i, i);
-				printf("%d\n", available);
+			if (steps_p2[i].num_depends == 0 && available > 0) {
+				steps_p2[i].num_depends = -1;
 				available--;
-
+				enqueue(queue, 61 + i, i);
 				i = 0;
 			}
 		}
 
-		t++;
+		time_to_build++;
 
 		for (int i = 0; i < 5; i++) {
-			if (queue[i].timer > 0) {
-				queue[i].timer--;
-				if (queue[i].timer == 0) {
-					printf("__finished timer %d\n", t);
-				}
-			}
+			if (queue[i].timer > 0) { queue[i].timer--; }
 		}
 
 		for (int i = 0; i < 5; i++) {
 			if (queue[i].timer == 0) {
 				for (int j = 0; j < 26; j++) {
-					if (steps[j].depends[queue[i].to_remove]) {
-						printf("removed %c\n", queue[i].to_remove + 0x41);
-						steps[j].depends[queue[i].to_remove] = 0;
-						steps[j].num_depends--;
-						printf("d (%c): %d\n", j + 0x41, steps[j].num_depends);
+					if (steps_p2[j].depends[queue[i].to_remove]) {
+						steps_p2[j].depends[queue[i].to_remove] = 0;
+						steps_p2[j].num_depends--;
 					}
 				}
+
 				dequeue(queue, i);
 				available++;
 				completed++;
@@ -166,15 +187,18 @@ int main(int argc, char** argv) {
 
 	time_end = clock();
 
-    printf(GREEN "\ndone.\n" RESET);
+    printf(GREEN "done.\n" RESET);
 
 	printf(B_WHITE "\ntotal time taken" WHITE "\t: " RED "%f" WHITE " seconds\n" RESET, (double) (time_end - time_start) / CLOCKS_PER_SEC);
-	printf(B_RED "[" MAGENTA "part 1" B_RED "] " B_WHITE "order of steps" WHITE "\t: " CYAN "VAL\n" RESET);
-	printf(B_RED "[" MAGENTA "part 2" B_RED "] " B_WHITE "time to build" WHITE "\t: " CYAN "%d seconds\n" RESET, t);
+	printf(B_RED "[" MAGENTA "part 1" B_RED "] " B_WHITE "order of steps" WHITE "\t: " CYAN "%s\n" RESET, p1_str);
+	printf(B_RED "[" MAGENTA "part 2" B_RED "] " B_WHITE "time to build" WHITE "\t: " CYAN "%d seconds\n" RESET, time_to_build);
 
 	// free up memory
-	fclose(fp);
+	free(steps_p1);
+	free(steps_p2);
+	free(queue);
 	if (line) { free(line); }
+	fclose(fp);
 
 	return 0;
 }
