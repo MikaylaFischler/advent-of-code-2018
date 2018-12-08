@@ -6,30 +6,30 @@
 
 #include "main.h"
 
-typedef struct node {
-	uint8_t num_children;
-	uint8_t num_metadata;
-	uint8_t* metadata;
-	struct node* children;
-} node_t;
-
+//! @brief total of all metadata values
 uint32_t meta_data_total = 0;
 
-void populate_tree(FILE* fp, node_t* root);
-node_t* get_children(FILE* fp, node_t* root, uint8_t num_children);
-uint8_t* get_metadata(FILE* fp, node_t* root, uint8_t num_metadata);
-
+/**
+ * @brief get all the children of a node
+ * @param fp the file pointer for input file
+ * @param root the node to get children for
+ * @param num_children the number of children to look for
+ * @return the 0th node in the array of children of length num_children (must be free'd by user)
+ */
 node_t* get_children(FILE* fp, node_t* root, uint8_t num_children) {
 	if (num_children == 0) { return NULL; }
 	node_t* children = malloc(sizeof(node_t) * num_children);
-
-	for (int i = 0; i < num_children; i++) {
-		populate_tree(fp, &children[i]);
-	}
-
+	for (int i = 0; i < num_children; i++) { populate_tree(fp, &children[i]); }
 	return children;
 }
 
+/**
+ * @brief get the metadata for a node
+ * @param fp the file pointer of the input file
+ * @param root the node to get metadata for
+ * @param num_metadata the number of metadata entries to look for
+ * @return the 0th node in the array of metadata of length num_metadata (must be free'd by user)
+ */
 uint8_t* get_metadata(FILE* fp, node_t* root, uint8_t num_metadata) {
 	if (num_metadata == 0) { return NULL; }
 	uint8_t* metadata = malloc(sizeof(uint8_t) * num_metadata);
@@ -48,6 +48,7 @@ uint8_t* get_metadata(FILE* fp, node_t* root, uint8_t num_metadata) {
 				break;
 			}
 		}
+
 		metadata[i] = atoi(in_str);
 		meta_data_total += metadata[i];
 		idx = 0;
@@ -56,6 +57,11 @@ uint8_t* get_metadata(FILE* fp, node_t* root, uint8_t num_metadata) {
 	return metadata;
 }
 
+/**
+ * @brief recursively populate a tree of nodes from a file
+ * @param fp the input file pointer
+ * @param root the node to populate
+ */
 void populate_tree(FILE* fp, node_t* root) {
 	char children_str[3];
 	char metadata_str[3];
@@ -87,6 +93,11 @@ void populate_tree(FILE* fp, node_t* root) {
 	root->metadata = get_metadata(fp, root, root->num_metadata);
 }
 
+/**
+ * @brief recursively calculate the value of a node
+ * @param root the node to calculate value of
+ * @return the total value of that node
+ */
 uint32_t calc_node_value(node_t* root) {
 	uint32_t sum = 0;
 	if (root->num_children == 0) {
@@ -104,6 +115,10 @@ uint32_t calc_node_value(node_t* root) {
 	return sum;
 }
 
+/**
+ * @brief recursively free a tree of node_t
+ * @param root the node to free
+ */
 void free_tree(node_t* root) {
 	if (root) {
 		free(root->metadata);
@@ -127,14 +142,19 @@ int main(int argc, char** argv) {
 	// timing
 	clock_t time_start, time_end;
 
+	// node and run-time variables
 	node_t* root = malloc(sizeof(node_t));
+	uint32_t root_value = 0;
 
 	printf(YELLOW "starting...\n" RESET);
 
 	time_start = clock();
 
+	// populate the tree (updates global meta data count variable)
 	populate_tree(fp, root);
-	uint32_t root_value = calc_node_value(root);
+
+	// calculate the value of the root node
+	root_value = calc_node_value(root);
 
 	time_end = clock();
 
