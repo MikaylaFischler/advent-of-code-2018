@@ -21,6 +21,12 @@ typedef struct map_prop {
 	uint16_t max_y, min_y;
 } map_prop_t;
 
+/**
+ * @brief update the map properties (max/min values)
+ * @param map_prop the map peroperties
+ * @param type the type (x or y)
+ * @param value the new value to set if is a max or min
+ */
 void map_prop_update(map_prop_t* map_prop, uint8_t type, uint16_t value) {
 	if (map_prop) {
 		if (type == MAP_PROP_ROW) {
@@ -33,6 +39,13 @@ void map_prop_update(map_prop_t* map_prop, uint8_t type, uint16_t value) {
 	}
 }
 
+/**
+ * @brief check if an x and y are at the coordinate of a location
+ * @param locations the array of location structs
+ * @param x the x coodinate
+ * @param y the y coordinate
+ * @return 1 if is a location, 0 otherwise
+ */
 uint8_t is_coord(location_t** locations, uint16_t x, uint16_t y) {
 	for (int i = 0; i < INPUT_LENGTH; i++) {
 		if (locations[i]->x == x && locations[i]->y == y) { return 1; }
@@ -41,12 +54,25 @@ uint8_t is_coord(location_t** locations, uint16_t x, uint16_t y) {
 	return 0;
 }
 
-uint8_t has_inf_area(map_prop_t* map_prop, location_t* coord) {
-	return (coord->x >= map_prop->max_x || coord->x <= map_prop->min_x || coord->y >= map_prop->max_y || coord->y <= map_prop->min_y);
+/**
+ * @brief check if a coordinate of a location is at the boundaries
+ * @param map_prop the map properties
+ * @param coord the location to check
+ * @return 1 if at boundaries, 0 otherwise
+ */
+uint8_t at_bounds(map_prop_t* map_prop, location_t* coord) {
+	return (coord->x == map_prop->max_x || coord->x == map_prop->min_x || coord->y == map_prop->max_y || coord->y == map_prop->min_y);
 }
 
-uint8_t adv_has_inf_area(map_prop_t* map_prop, location_t** locations, location_t* coord) {
-	if (has_inf_area(map_prop, coord)) { return 1; }
+/**
+ * @brief check if a location has an infinite area
+ * @param map_prop the map properties
+ * @param locations the locations in the map
+ * @param coord the location to check
+ * @return 1 if has infinite area, 0 otherwise
+ */
+uint8_t has_inf_area(map_prop_t* map_prop, location_t** locations, location_t* coord) {
+	if (at_bounds(map_prop, coord)) { return 1; }
 
 	uint16_t mid_x = (map_prop->max_x + map_prop->min_x) / 2;
 	uint16_t mid_y = 0;
@@ -95,6 +121,13 @@ uint8_t adv_has_inf_area(map_prop_t* map_prop, location_t** locations, location_
 	return 0;
 }
 
+/**
+ * @brief find the distance to a point from a coordinate
+ * @param loc the location to check from
+ * @param x the x position of the point
+ * @param y the y position of the point
+ * @return absolute value of the distance
+ */
 uint16_t distance_to(location_t* loc, int16_t x, int16_t y) {
 	uint16_t dist_x, dist_y;
 
@@ -113,13 +146,23 @@ uint16_t distance_to(location_t* loc, int16_t x, int16_t y) {
 	return dist_x + dist_y; // abs((int32_t) loc->x - x) + abs((int32_t) loc->y - y);
 }
 
-uint8_t is_less_than_10000(location_t** locations, uint16_t* dists) {
+/**
+ * @brief check if an array of distances totals less than 10000
+ * @param dists the distances
+ * @return 1 if is less than 10000, 0 otherwise
+ */
+uint8_t is_less_than_10000(uint16_t* dists) {
 	uint16_t dist = 0;
 	for (int8_t i = 0; i < INPUT_LENGTH; i++) { dist += dists[i]; }
 	if (dist < 10000) { return 1; }
 	return 0;
 }
 
+/**
+ * @brief update the area of locations
+ * @param locations the locations
+ * @param dists the distances to check
+ */
 void compute_area(location_t** locations, uint16_t* dists) {
 	uint16_t min = 0;
 	uint8_t min_idx = 0;
@@ -155,7 +198,8 @@ int main(int argc, char** argv) {
     if (fp == NULL) { return -1; }
 
 	// timing
-	clock_t time_start, time_end;
+	clock_t time_start, time_end, parse_end, map_alloc_start, map_alloc_end, distance_start,
+		distance_end, compute_start, compute_end;
 
 	// string temp vars
 	char x_str[4];
@@ -171,6 +215,8 @@ int main(int argc, char** argv) {
 	printf(YELLOW "starting...\n" RESET);
 
 	time_start = clock();
+
+	printf(YELLOW ">" B_WHITE " parsing input...\n" RESET);
 
 	while ((num_read = getline(&line, &len, fp)) != -1) {
 		state = 0;
@@ -206,6 +252,14 @@ int main(int argc, char** argv) {
 		map_prop_update(map_prop, MAP_PROP_ROW, loc->y);
 	}
 
+	parse_end = clock();
+
+	printf(B_GREEN ">" B_WHITE " parsed input " WHITE "(" BLUE "%.3f ms" WHITE ")\n" RESET, (parse_end - time_start) * 1000.0 / CLOCKS_PER_SEC);
+
+	printf(YELLOW ">" B_WHITE " allocating map...\n" RESET);
+
+	map_alloc_start = clock();
+
 	uint16_t map_width = (map_prop->max_x - map_prop->min_y + 1);
 	uint16_t map_height = (map_prop->max_y - map_prop->min_y + 1);
 	uint16_t*** map = malloc(sizeof(uint16_t**) * map_width);
@@ -218,6 +272,14 @@ int main(int argc, char** argv) {
 			map[i][j] = malloc(sizeof(uint16_t) * (INPUT_LENGTH));
 		}
 	}
+
+	map_alloc_end = clock();
+
+	printf(B_GREEN ">" B_WHITE " allocated map " WHITE "(" BLUE "%.3f ms" WHITE ")\n" RESET, (map_alloc_end - map_alloc_start) * 1000.0 / CLOCKS_PER_SEC);
+
+	printf(YELLOW ">" B_WHITE " computing distances to coordinates...\n" RESET);
+
+	distance_start = clock();
 
 	for (int i = 0; i < map_width; i++) {
 		for (int j = 0; j < map_height; j++) {
@@ -234,6 +296,14 @@ int main(int argc, char** argv) {
 		}
 	}
 
+	distance_end = clock();
+
+	printf(B_GREEN ">" B_WHITE " computed distances to coordinates " WHITE "(" BLUE "%.3f ms" WHITE ")\n" RESET, (distance_end - distance_start) * 1000.0 / CLOCKS_PER_SEC);
+
+	printf(YELLOW ">" B_WHITE " computing areas (p1) and largest region (p2)...\n" RESET);
+
+	compute_start = clock();
+
 	for (int i = 0; i < map_width; i++) {
 		for (int j = 0; j < map_height; j++) {
 			x = i + map_prop->min_x;
@@ -241,17 +311,21 @@ int main(int argc, char** argv) {
 
 			if (x < map_prop->max_x && x > map_prop->min_x && y < map_prop->max_y && y > map_prop->min_y) {
 				compute_area(locations, map[i][j]);
-				region += is_less_than_10000(locations, map[i][j]);
+				region += is_less_than_10000(map[i][j]);
 			}
 		}
 	}
 
 	uint32_t max_area = 0;
 	for (int i = 0; i < INPUT_LENGTH; i++) {
-		if (locations[i]->area > max_area && adv_has_inf_area(map_prop, locations, locations[i])) {
+		if (locations[i]->area > max_area && has_inf_area(map_prop, locations, locations[i])) {
 			max_area = locations[i]->area;
 		}
 	}
+
+	compute_end = clock();
+
+	printf(B_GREEN ">" B_WHITE " computed areas, max area, and largest region " WHITE "(" BLUE "%.3f ms" WHITE ")\n" RESET, (compute_end - compute_start) * 1000.0 / CLOCKS_PER_SEC);
 
 	time_end = clock();
 
