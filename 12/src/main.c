@@ -23,6 +23,10 @@ typedef struct condition {
 	char result;
 } condition_t;
 
+/**
+ * @brief print out the pots
+ * @param pot the first pot
+ */
 void print_pots(pot_t* pot) {
 	if (pot && pot->plant) {
 		printf("%d ", pot->plant);
@@ -30,6 +34,11 @@ void print_pots(pot_t* pot) {
 	}
 }
 
+/**
+ * @brief get a plant from a pot
+ * @param pot the pot
+ * @return the character representation of the plant
+ */
 char get_plant(pot_t* pot) {
 	if (pot) {
 		if (pot->plant) {
@@ -37,9 +46,15 @@ char get_plant(pot_t* pot) {
 		} else {
 			return '.';
 		}
-	}
+	} else { return '.'; }
 }
 
+/**
+ * @brief find if the pot matches a condition
+ * @param pot the pot to center with
+ * @param conditions the conditions to check against
+ * @return the resulting character status
+ */
 char find_condition(pot_t* pot, condition_t* conditions) {
 	char pot_state[5];
 
@@ -48,9 +63,6 @@ char find_condition(pot_t* pot, condition_t* conditions) {
 	pot_state[2] = pot->plant;
 	pot_state[3] = get_plant(pot->next);
 	pot_state[4] = get_plant(pot->next->next);
-
-	// printf("%.5s\n", pot_state);
-
 
 	uint8_t matches = 0;
 	for (int i = 0; i < NUM_CONDITIONS; i++) {
@@ -63,6 +75,11 @@ char find_condition(pot_t* pot, condition_t* conditions) {
 	return 0;
 }
 
+/**
+ * @brief grow the plants!
+ * @param left_pot the leftmost pot
+ * @param right_pot the rightmost pot
+ */
 void grow(pot_t* left_pot, pot_t* right_pot) {
 	if (left_pot->next->next->plant == '#') {
 		pot_t* before = left_pot->next;
@@ -93,11 +110,40 @@ void grow(pot_t* left_pot, pot_t* right_pot) {
 	}
 }
 
+/**
+ * @brief calculate the sum of the plants
+ * @param pot the leftmost pot
+ * @return the count of plants
+ */
 int64_t calc_sum(pot_t* pot) {
 	if (pot && pot->plant) {
 		int32_t val = pot->plant == '#' ? pot->idx : 0;
 		return val + calc_sum(pot->next);
 	} else { return 0; }
+}
+
+/**
+ * @brief check if the differences have stabalized over the past few iterations
+ * @param set_check the 20 element set to check for matching differences
+ * @return if the system has stabilized
+ */
+uint8_t stabilized(int32_t* set_check) {
+	int32_t val = set_check[0];
+	for (int i = 1; i < 20; i++) {
+		if (set_check[i] != val) { return 0; }
+	}
+	return 1;
+}
+
+/**
+ * @brief free the pots
+ * @param pot the leftmost pot
+ */
+void free_pots(pot_t* pot) {
+	if (pot) {
+		free_pots(pot->next);
+        free(pot);
+	}
 }
 
 int main(int argc, char** argv) {
@@ -148,6 +194,8 @@ int main(int argc, char** argv) {
 		cur_pot = pot;
 	}
 
+	printf(GREEN "=> " WHITE "parsed intial state\n" RESET);
+
 	while ((c = fgetc(fp)) != '\n' && c != EOF) {
 		if (state < 2) {
 			if (c == ' ') { state++; }
@@ -181,9 +229,6 @@ int main(int argc, char** argv) {
 	right_pot->prev = cur_pot;
 	cur_pot->next = right_pot;
 
-	print_pots(left_pot->next);
-	printf("\n");
-
 	while ((c = fgetc(fp)) == '\n') {};
 	fseek(fp, -1, SEEK_CUR);
 
@@ -206,30 +251,31 @@ int main(int argc, char** argv) {
 					break;
 			}
 		}
-
-		printf("%.5s => %c\n", conditions[cond_idx].cond, conditions[cond_idx].result);
 		cond_idx++;
 	}
 
-	char result = 0;
-	pot_t* pot = NULL;
+	printf(GREEN "=> " WHITE "parsed conditions\n" RESET);
 
-	int64_t generations = 2000;
-	for (int g = 0; g < generations; g++) {
+	char result = 0;
+	int g = 0;
+	uint8_t done = 0;
+	pot_t* pot = NULL;
+	int32_t p1 = 0;
+	int64_t p2 = 0;
+	int32_t last_sum = 0;
+	int32_t sum = 0;
+	int32_t set_check[20];
+
+	printf(YELLOW "=> " WHITE "running generations\n" RESET);
+
+	for (; done == 0; g++) {
 		pot = left_pot->next;
 		while (pot->plant) {
 			if (result = find_condition(pot, conditions)) {
 				pot->plant_next = result;
-			} else {
-				pot->plant_next = pot->plant;
-			}
-
+			} else { pot->plant_next = pot->plant; }
 			pot = pot->next;
 		}
-
-		// printf("start %d: ", g);
-		// print_pots(left_pot->next);
-		// printf("\n");
 
 		pot = left_pot->next;
 		while (pot->plant) {
@@ -238,24 +284,33 @@ int main(int argc, char** argv) {
 		}
 
 		grow(left_pot, right_pot);
+		sum = calc_sum(left_pot->next);
 
-		// printf("end %d:   ", g);
-		// print_pots(left_pot->next);
-		// printf("\n");
+		if (g > 20) {
+			set_check[idx++] = sum - last_sum;
+			if (idx > 19) { idx = 0; }
+		}
 
-		int64_t sum = calc_sum(left_pot->next);
-		printf("%ld\n", sum);
+		if (stabilized(set_check)) { done = 1; }
+
+		last_sum = sum;
+		if (g == 19) { p1 = sum; }
 	}
+
+	printf(BLUE "=> " WHITE "completed %d generations; system stabilized for 20 generations\n" RESET, g);
+
+	p2 = set_check[0] * (50000000000 - g) + sum;
 
 	time_end = clock();
 
     printf(GREEN "done.\n" RESET);
 
 	printf(B_WHITE "\ntotal time taken" WHITE "\t: " RED "%f" WHITE " seconds\n" RESET, (double) (time_end - time_start) / CLOCKS_PER_SEC);
-	printf(B_RED "[" MAGENTA "part 1" B_RED "] " B_WHITE "DESC" WHITE "\t\t: " CYAN "VAL\n" RESET);
-	printf(B_RED "[" MAGENTA "part 2" B_RED "] " B_WHITE "DESC" WHITE "\t\t: " CYAN "VAL\n" RESET);
+	printf(B_RED "[" MAGENTA "part 1" B_RED "] " B_WHITE "after 20 generations" WHITE "\t: " CYAN "%d\n" RESET, p1);
+	printf(B_RED "[" MAGENTA "part 2" B_RED "] " B_WHITE "after fifty billion" WHITE "\t: " CYAN "%ld\n" RESET, p2);
 
 	// free up memory
+    free_pots(left_pot);
 	fclose(fp);
 	if (line) { free(line); }
 
