@@ -1,0 +1,53 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <inttypes.h>
+#include <time.h>
+#include <unistd.h>
+
+int main() {
+	uint64_t reg[6] = { 0, 0, 0, 0, 0, 0 };
+
+	l0:
+	reg[1] = 123;
+	reg[1] &= 456;
+	reg[1] = reg[1] == 72;
+
+	if (reg[1] == 0) { goto l0; }
+
+	reg[1] = 0;
+
+	l6:
+	reg[2] = reg[1] | 65536;
+	reg[1] = 8725355;
+	reg[5] = reg[2] & 255;
+	reg[1] = reg[5] + reg[1];
+	reg[1] &= 16777215;
+	reg[1] *= 65899;
+	reg[1] &= 16777215;
+
+	reg[5] = 256 > reg[2];
+
+	if (reg[5] == 1) { goto l28; }
+
+	reg[5] = 0;
+	l18:
+	reg[3] = reg[5] + 1;
+	reg[3] *= 256;
+	reg[3] = reg[3] > reg[2];
+
+	if (reg[3]) { goto l26; }
+
+	reg[5]++;
+	goto l18;
+
+	l26:
+	reg[2] = reg[5];
+	reg[4] = 7;
+
+	l28:
+	reg[5] = reg[1] == reg[0];
+ 	printf("%ld\n", reg[1]);
+	sleep(1);
+ 	if (reg[5]) { printf("%ld\n", reg[1]); }
+	goto l6;
+}
