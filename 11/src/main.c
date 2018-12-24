@@ -16,6 +16,13 @@ typedef struct thread_data {
 	int32_t** grid;
 } thread_data_t;
 
+/**
+ * @brief compute the power at a coordinate
+ * @param x the x coord
+ * @param y the y coord
+ * @param grid_sn the grid serial number
+ * @return the power value
+ */
 int32_t compute_power(uint16_t x, uint16_t y, uint16_t grid_sn) {
 	uint16_t rack_id = x + 10;
 	int32_t power_level = rack_id * y;
@@ -26,6 +33,11 @@ int32_t compute_power(uint16_t x, uint16_t y, uint16_t grid_sn) {
 	return power_level;
 }
 
+/**
+ * @brief copy a grid
+ * @param src the source grid
+ * @param dest the destination grid
+ */
 void duplicate_grid(int32_t** src, int32_t** dest) {
 	for (uint16_t x = 0; x < 300; x++) {
 		for (uint16_t y = 0; y < 300; y++) {
@@ -34,6 +46,11 @@ void duplicate_grid(int32_t** src, int32_t** dest) {
 	}
 }
 
+/**
+ * @brief compute maximum value in range
+ * @param input the input struct (should be thread_data_t*)
+ * @return return data (NULL)
+ */
 void* compute_max_in_range(void* input) {
 	thread_data_t* data = (thread_data_t*) input;
 	data->power = data->x = data->y = data->size = 0;
@@ -118,42 +135,54 @@ int main(int argc, char** argv) {
 	}
 
 	// build up threads and thread data
-	thread_data_t thread_data[4];
-	pthread_t threads[4];
+	thread_data_t thread_data[6];
+	pthread_t threads[6];
 
 	thread_data[0].min = 1;
 	thread_data[0].max = 100;
 	thread_data[0].grid = grid_1;
 
 	thread_data[1].min = 101;
-	thread_data[1].max = 150;
+	thread_data[1].max = 135;
 	thread_data[1].grid = grid_1;
 
-
-	thread_data[2].min = 151;
-	thread_data[2].max = 200;
+	thread_data[2].min = 136;
+	thread_data[2].max = 150;
 	thread_data[2].grid = grid_1;
 
-
-	thread_data[3].min = 201;
-	thread_data[3].max = 300;
+	thread_data[3].min = 151;
+	thread_data[3].max = 165;
 	thread_data[3].grid = grid_1;
+
+	thread_data[4].min = 166;
+	thread_data[4].max = 200;
+	thread_data[4].grid = grid_1;
+
+	thread_data[5].min = 201;
+	thread_data[5].max = 300;
+	thread_data[5].grid = grid_1;
 
 	// spawn threads
 	pthread_create(&threads[0], NULL, compute_max_in_range, (void*) &thread_data[0]);
 	pthread_create(&threads[1], NULL, compute_max_in_range, (void*) &thread_data[1]);
 	pthread_create(&threads[2], NULL, compute_max_in_range, (void*) &thread_data[2]);
 	pthread_create(&threads[3], NULL, compute_max_in_range, (void*) &thread_data[3]);
+	pthread_create(&threads[4], NULL, compute_max_in_range, (void*) &thread_data[4]);
+	pthread_create(&threads[5], NULL, compute_max_in_range, (void*) &thread_data[5]);
 
 	// wait for threads
 	pthread_join(threads[0], NULL);
 	printf("thread 1 joined\n");
-	pthread_join(threads[3], NULL);
-	printf("thread 4 joined\n");
+	pthread_join(threads[5], NULL);
+	printf("thread 6 joined\n");
 	pthread_join(threads[1], NULL);
 	printf("thread 2 joined\n");
+	pthread_join(threads[4], NULL);
+	printf("thread 5 joined\n");
 	pthread_join(threads[2], NULL);
 	printf("thread 3 joined\n");
+	pthread_join(threads[3], NULL);
+	printf("thread 4 joined\n");
 
 	// determine solution
 	int32_t max_power = 0;
@@ -161,7 +190,7 @@ int main(int argc, char** argv) {
 	uint16_t max_y = 0;
 	uint16_t best_size = 0;
 
-	for (int i = 0; i < 4; i++) {
+	for (int i = 0; i < 6; i++) {
 		if (thread_data[0].power > max_power) {
 			max_power = thread_data[0].power;
 			max_x = thread_data[0].x;
@@ -183,6 +212,7 @@ int main(int argc, char** argv) {
 	printf(B_RED "[" MAGENTA "part 2" B_RED "] " B_WHITE "x,y,size: power" WHITE "\t: " CYAN "%d,%d,%d: power level is %d\n" RESET, max_x, max_y, best_size, max_power);
 
 	// free up memory
-
+	for (int i = 0; i < 300; i++) { free(grid_1[i]); }
+	free(grid_1);
 	return 0;
 }
